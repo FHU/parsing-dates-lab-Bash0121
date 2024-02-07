@@ -25,14 +25,19 @@ def parse_month(month):
 #parse_date function should return the date formated as MM/DD/YYYY
 #DO NOT REMOVE THIS FUNCTION
 def parse_date(user_string):
-    month_parse=parse_month(user_string[0])
-    day=user_string[1]
+    list1=[]
+    list1=user_string.split()
+
+    month_parse=parse_month(list1[0])
+    day=list1[1]
     day=day.replace(",","")
+
     if int(day)<10:
        day_parse="0"+day
     else:
        day_parse=day
-    year_parse=user_string[2]
+
+    year_parse=list1[2]
     comps=[]
     comps.append(month_parse)
     comps.append(day_parse)
@@ -41,12 +46,5 @@ def parse_date(user_string):
     return parsed_date
 #REMOVE PASS AND YOUR CODE GOES HERE
 if __name__ == '__main__':
-   list1=[]
-   counter=0
    u_input1=input()
-   '''while counter>0:
-    if u_input1==-1:
-       counter+=1
-    else:'''
-   list1=u_input1.split()
-   print(parse_date(list1))
+   print(parse_date(u_input1))
