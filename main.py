@@ -18,7 +18,6 @@ def parse_month(month):
         "December" : "12"
     }
     
-    month_list:{}
     num=month_list[month]
     return num
 
